@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('')),
+      appBar: AppBar(title: const Text('Home Page')),
       body: AvailableColorsWidget(
           color1: color1,
           color2: color2,
@@ -40,14 +40,14 @@ class _HomePageState extends State<HomePage> {
                           color1 = colors.getRandomElement();
                         });
                       },
-                      child: Text('Change Color1')),
+                      child: const Text('Change Color1')),
                   TextButton(
                       onPressed: () {
                         setState(() {
                           color2 = colors.getRandomElement();
                         });
                       },
-                      child: Text('Change Color2'))
+                      child: const Text('Change Color2'))
                 ],
               ),
               const ColorWidget(color: AvailableColors.one),
@@ -64,7 +64,7 @@ class AvailableColorsWidget extends InheritedModel<AvailableColors> {
   final MaterialColor color1;
   final MaterialColor color2;
 
-  AvailableColorsWidget(
+  const AvailableColorsWidget(
       {Key? key,
       required this.color1,
       required this.color2,
